@@ -5,5 +5,6 @@ data class Question(
     val correctAnswer: String,
     val question: String,
     val questionImageUrl: String,
-    val score: Int
+    val score: Int,
+
 )

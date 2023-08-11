@@ -1,12 +1,9 @@
 package com.mutsuddi_s.mvvm.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mutsuddi_s.mvvm.model.Question
-import com.mutsuddi_s.mvvm.model.Quiz
 import com.mutsuddi_s.mvvm.repository.QuizRepository
 import com.mutsuddi_s.programmingherojobtask.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,9 +22,14 @@ class MainViewModel @Inject constructor(private val repository: QuizRepository):
 
     }
     val currentIndex: LiveData<Int> = repository.currentIndex
+    val score: LiveData<Int> = repository.score
+
 
     fun moveToNextQuestion() {
         repository.moveToNextQuestion()
+    }
+    fun totalScore(point:Int) {
+        repository.totalScore(point)
     }
 
     val questions: LiveData<Response<List<Question>>>
