@@ -23,6 +23,8 @@ class MainViewModel @Inject constructor(private val repository: QuizRepository):
     }
     val currentIndex: LiveData<Int> = repository.currentIndex
     val score: LiveData<Int> = repository.score
+    val checkNavigation: LiveData<Boolean> = repository.checkNavigation
+    val  highestScore: LiveData<Int> = repository.highestScore
 
 
     fun moveToNextQuestion() {
@@ -31,6 +33,18 @@ class MainViewModel @Inject constructor(private val repository: QuizRepository):
     fun totalScore(point:Int) {
         repository.totalScore(point)
     }
+
+    fun setNavigationFalse() {
+        repository.setNavigationFalse()
+
+    }
+    fun setCurrentIndexZero() {
+        repository.setCurrentIndexZero()
+
+    }
+
+
+
 
     val questions: LiveData<Response<List<Question>>>
         get()=repository.questions

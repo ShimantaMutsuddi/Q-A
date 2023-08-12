@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel= ViewModelProvider(this).get(MainViewModel::class.java)
 
-        NavigationUI.setupActionBarWithNavController(this,navController)
+       // NavigationUI.setupActionBarWithNavController(this,navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {

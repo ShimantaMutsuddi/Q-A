@@ -8,8 +8,8 @@
     </item>
     <item android:right="2dp" android:left="2dp" android:bottom="4dp">
         <shape>
-            <solid android:color="#FFF"/>
-            <corners android:radius="20dp"/>
+            <solid android:color="@color/white"/>
+            <corners android:radius="10dp"/>
         </shape>
     </item>
 </layer-list>

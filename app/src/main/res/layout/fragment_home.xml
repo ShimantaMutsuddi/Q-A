@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo"
+        android:background="@drawable/bg_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Programming Hero"
-        android:textSize="28sp"
+        android:textSize="34sp"
         android:textColor="@color/white"
+        android:fontFamily="@font/gilroy_bold"
         app:layout_constraintStart_toStartOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="@+id/logo"
         app:layout_constraintTop_toBottomOf="@+id/logo"
@@ -34,7 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quiz"
-        android:textSize="38sp"
+        android:fontFamily="@font/brandon_grotesque_black"
+        android:textSize="50sp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="@+id/logo"
@@ -49,35 +52,40 @@
         android:text="HighScore"
         android:textSize="38sp"
         android:textColor="@color/white"
+        android:fontFamily="@font/gilroy_bold"
         app:layout_constraintStart_toStartOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="@+id/logo"
         app:layout_constraintTop_toBottomOf="@+id/txt_quiz"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="500 point"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textColor="@color/white"
+        android:fontFamily="@font/brandon_grotesque_black"
         app:layout_constraintStart_toStartOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="@+id/logo"
         app:layout_constraintTop_toBottomOf="@+id/txt_highscore"
         android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_card"
         app:layout_constraintStart_toStartOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="@+id/logo"
         app:layout_constraintTop_toBottomOf="@+id/score"
         android:layout_marginTop="50dp"
         tools:ignore="MissingConstraints" />
+
 
 
 
