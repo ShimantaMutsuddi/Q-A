@@ -1,9 +1,12 @@
 package com.mutsuddi_s.programmingherojobtask.ui
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.text.Html
+import android.text.Spanned
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -185,7 +188,8 @@ class QuizFragment : Fragment() {
             val answerOption = answerOptions[i]
             answerOption.text = answer
             if (answer != null) {
-                answerOption.text = answer
+
+                answerOption.text = answerOption.text
                 answerOption.visibility = View.VISIBLE
             } else {
                 answerOption.text = ""
@@ -300,6 +304,14 @@ class QuizFragment : Fragment() {
             optionView.setTextColor(Color.BLACK)
         }
     }
+  /*  fun getFormattedTextFromHtml(html: String): Spanned {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            @Suppress("DEPRECATION")
+            Html.fromHtml(html)
+        }
+    }*/
 
     private fun checkAnswer(question: Question, selectedAnswer: String, option: TextView) {
 
@@ -313,15 +325,18 @@ class QuizFragment : Fragment() {
         )
 
 
-        Log.d(TAG, "checkAnswer: $correctAnswer")
+        Log.d(TAG, "checkAnswer: ${answerMap[correctAnswer]}")
         Log.d(TAG, "selectedAnswer: $selectedAnswer")
+        Log.d(TAG, "selectedAnswer2: ${option.text}")
         //Log.d(TAG, "question.correctAnswer: ${question.answers.selectedAnswer}")
-        if (answerMap[correctAnswer] == selectedAnswer) {
+        if (answerMap[correctAnswer] == option.text) {
             // Handle correct answer
            // Toast.makeText(requireActivity(),"Right answer",Toast.LENGTH_SHORT).show()
             //Log.d(TAG, "checkAnswer: ${question.score}")
             option.setBackgroundResource(R.drawable.correct_option_border_bg)
             viewModel.totalScore(question.score)
+
+
 
 
         } else {
@@ -384,6 +399,8 @@ class QuizFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.setCurrentIndexZero()
+        //viewModel.seS()
     }
 
     private fun hideProgressBar() {

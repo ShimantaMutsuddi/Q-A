@@ -84,8 +84,8 @@ class QuizRepository @Inject constructor(
         else
         {
             _checkNavigation.value=true
-            _currentIndex.value=0
-            _score.value=0
+            //_currentIndex.value=0
+
         }
     }
 
@@ -110,6 +110,7 @@ class QuizRepository @Inject constructor(
 
     fun setCurrentIndexZero() {
         _currentIndex.value=0
+        _score.value=0
     }
 
 
